@@ -39,7 +39,7 @@ public class CarController {
 	@RequestMapping("/addCar")
 	public String addCar( @ModelAttribute("car") Car car) {
 		carService.save(car);
-		return  "redirect:/cars/list";
+		return  "redirect:/list";
 	}
 	
 	@RequestMapping("/updateForm")
@@ -55,7 +55,7 @@ public class CarController {
 	public String deleteForm(@RequestParam("CarId") String id, Model model) {
 		int carId=Integer.parseInt(id);
 		carService.deleteById(carId);
-		return "redirect:/cars/list";
+		return "redirect:/list";
 	}
 
 	@RequestMapping("/searchCar")
