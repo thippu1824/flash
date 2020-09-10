@@ -46,7 +46,6 @@ public class CarController {
 	public String updateForm(@RequestParam("CarId") String id, Model model) {
 		int carId = Integer.parseInt(id);
 		Car car = carService.findById(carId);
-		// Kept the customer object inside a model for displaying the old data
 		model.addAttribute("car", car);
 		return "add";
 	}
